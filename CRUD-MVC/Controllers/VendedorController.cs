@@ -4,22 +4,22 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CRUD_MVC.Controllers
 {
-    public class ProductoController : Controller
+    public class VendedorController : Controller
     {
         private readonly IAPIServices _APIServices;
 
-        public ProductoController(IAPIServices servicios)
+        public VendedorController(IAPIServices servicios)
         {
             _APIServices = servicios;
         }
 
 
         // GET: ProductoController
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Indice()
         {
-            var productos = await _APIServices.GetProducts();
+            var sellers = await _APIServices.GetSellers();
 
-            return View(productos);
+            return View(sellers);
         }
 
         // GET: ProductoController/Details/5
@@ -33,11 +33,11 @@ namespace CRUD_MVC.Controllers
             return RedirectToAction("Index");
         } */
 
-        public async Task<IActionResult> Details(int IdProducto)
+        public async Task<IActionResult> Details(int Cedula)
         {
-            var producto = await _APIServices.GetProduct(IdProducto);
-            if (producto != null) return View(producto);
-            return RedirectToAction("Index");
+            var vendedor = await _APIServices.GetSeller(Cedula);
+            if (vendedor != null) return View(vendedor);
+            return RedirectToAction("Indice");
         }
 
         // GET: ProductoController/Create
@@ -55,10 +55,10 @@ namespace CRUD_MVC.Controllers
             return RedirectToAction("Index");
         }*/
 
-        public async Task<IActionResult> Create(Producto producto)
+        public async Task<IActionResult> Create(Vendedor vendedor)
         {
-            await _APIServices.POSTProducto(producto);
-            return RedirectToAction("Index");
+            await _APIServices.POSTSeller(vendedor);
+            return RedirectToAction("Indice");
         }
 
         // GET: ProductoController/Edit/5
@@ -86,18 +86,18 @@ namespace CRUD_MVC.Controllers
             return RedirectToAction("Index");
         } */
 
-        public async Task<IActionResult> Edit(int IdProducto)
+        public async Task<IActionResult> Edit(int Cedula)
         {
-            var producto = await _APIServices.GetProduct(IdProducto);
-            if (producto != null) return View(producto);
-            return RedirectToAction("Index");
+            var vendedor = await _APIServices.GetSeller(Cedula);
+            if (vendedor != null) return View(vendedor);
+            return RedirectToAction("Indice");
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(Producto producto)
+        public async Task<IActionResult> Edit(Vendedor vendedor)
         {
-            await _APIServices.PUTProducto(producto.IdProducto, producto);
-            return RedirectToAction("Index");
+            await _APIServices.PUTSeller(vendedor.Cedula, vendedor);
+            return RedirectToAction("Indice");
         }
 
         // GET: ProductoController/Delete/5
@@ -111,12 +111,12 @@ namespace CRUD_MVC.Controllers
             return RedirectToAction("Index");
         } */
 
-        public async Task<IActionResult> Delete(int IdProducto)
+        public async Task<IActionResult> Delete(int Cedula)
         {
-            Console.WriteLine($"El Id enviado fue: {IdProducto}");
-            await _APIServices.DeleteProducto(IdProducto);
+            Console.WriteLine($"El Id enviado fue: {Cedula}");
+            await _APIServices.DeleteSeller(Cedula);
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Indice");
         }
 
 

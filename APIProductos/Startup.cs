@@ -1,10 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
+﻿using APIProductos.Data;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using APIProductos.Data;
 
 
 public class Startup
@@ -19,7 +14,7 @@ public class Startup
     public void ConfigureServices(IServiceCollection services)
     {
         // Agrega el servicio de ámbito
-       
+
         services.AddControllers();
         services.AddDbContext<ApplicationDBContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("ConstStr")));
@@ -38,7 +33,7 @@ public class Startup
             app.UseHsts();
         }
 
-        
+
 
         app.UseHttpsRedirection();
         app.UseStaticFiles();

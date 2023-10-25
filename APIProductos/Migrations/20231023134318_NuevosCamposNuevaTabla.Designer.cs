@@ -3,6 +3,7 @@ using APIProductos.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace APIProductos.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    partial class ApplicationDBContextModelSnapshot : ModelSnapshot
+    [Migration("20231023134318_NuevosCamposNuevaTabla")]
+    partial class NuevosCamposNuevaTabla
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -85,51 +88,6 @@ namespace APIProductos.Migrations
                             Descripcion = "Feyre regresa a la Corte Primavera, decidida a reunir información sobre los planes de Tamlin y del rey invasor que amenaza con destruir Prythian. Para esto deberá someterse a un letal y peligroso juego de engaño, en el que un simple error podría condenar no solo a Feyre, sino también a todo el mundo a su alrededor.\\nA medida que la guerra avanza sin tregua, Feyre deberá posicionarse como una alta fae y luchar por dominar sus dones mágicos; tendrá que determinar en cuáles de los deslumbrantes altos lores puede confiar y salir a buscar aliados en los lugares más inesperados.\\nEn este apasionante tercer volumen de la serie de Una corte de rosas y espinas de la exitosísima autora Sarah J. Maas, la tierra se teñirá de rojo mientras majestuosos ejércitos luchan por apoderarse del único objeto que podría destruirlos a todos. \",",
                             Genero = "Fantasia",
                             Nombre = "A Court of Wings And Ruin"
-                        });
-                });
-
-            modelBuilder.Entity("APIProductos.Models.Vendedor", b =>
-                {
-                    b.Property<int>("Cedula")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Cedula"));
-
-                    b.Property<string>("Apellidos")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("CantidadVentas")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("EsActivo")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Nombres")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Cedula");
-
-                    b.ToTable("Vendedor");
-
-                    b.HasData(
-                        new
-                        {
-                            Cedula = 1600014789,
-                            Apellidos = "Coronel Tapia",
-                            CantidadVentas = 0,
-                            EsActivo = true,
-                            Nombres = "Silvia Rosa"
-                        },
-                        new
-                        {
-                            Cedula = 1726884552,
-                            Apellidos = "Tapia Ortega",
-                            CantidadVentas = 100,
-                            EsActivo = false,
-                            Nombres = "Alejandra Ivonne"
                         });
                 });
 #pragma warning restore 612, 618

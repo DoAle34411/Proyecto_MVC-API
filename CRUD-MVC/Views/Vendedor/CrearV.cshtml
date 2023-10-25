@@ -1,0 +1,39 @@
+﻿@model Vendedor
+@{
+    ViewData["Title"] = "Crear Vendedor";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>En esta página se crean los vendedores.</p>
+
+<form method="post">
+    <div class="mb-3">
+        <label>Nombres</label>
+        <input asp-for="Nombres" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label>Apellidos</label>
+        <input asp-for="Apellidos" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label>Cantidad Ventas</label>
+        <input asp-for="CantidadVentas" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label>Activo</label>
+        <input asp-for="EsActivo" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label>Cedula</label>
+        <input asp-for="Cedula" class="form-control">
+    </div>
+    <div class="row col-6">
+        <div class="col-6">
+            <button type="submit" class="btn btn-success">Crear</button>
+        </div>
+        <div class="col-6">
+            <button type="submit" class="btn btn-success">Regresar</button>
+        </div>
+    </div>
+
+</form>

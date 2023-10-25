@@ -11,6 +11,14 @@
     <input asp-for="Nombre" class="form-control" readonly>
 </div>
 <div class="mb-3">
+    <label>Autor</label>
+    <input asp-for="Autor" class="form-control" readonly>
+</div>
+<div class="mb-3">
+    <label>Genero</label>
+    <input asp-for="Genero" readonly class="form-control">
+</div>
+<div class="mb-3">
     <label>Descripción</label>
     <input asp-for="Descripcion" class="form-control" readonly>
 </div>
@@ -18,9 +26,12 @@
     <label>Cantidad</label>
     <input asp-for="Cantidad" class="form-control" readonly>
 </div>
-
+<div class="mb-3">
+    <label>Costo</label>
+    <input asp-for="Costo" readonly class="form-control">
+</div>
 <div class="row col-6">
     <div class="col-6">
-        <a asp-action="Index" class="btn btn-success">REGRESAR</a>
+        <a asp-action="Index" class="btn btn-success">Regresar</a>
     </div>
 </div>
