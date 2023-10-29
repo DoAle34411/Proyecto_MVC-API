@@ -55,8 +55,6 @@ namespace CRUD_MVC.Services
 
         public async Task<Vendedor> GetSeller(int Cedula)
         {
-
-            
              try
              {
                  var vendedor = await _httpClient.GetFromJsonAsync<Vendedor>("api/Vendedor/" + Cedula);
@@ -83,6 +81,19 @@ namespace CRUD_MVC.Services
             //var vendedores = await _httpClient.GetFromJsonAsync<List<Vendedor>>("api/Vendedor");
            
             //return vendedores;
+        }
+
+        public async Task<User> GetUser(int IdUsuario, string Clave)
+        {
+            try
+            {
+                var usuario = await _httpClient.GetFromJsonAsync<User>($"/api/User/{IdUsuario}/{Clave}");
+                return usuario;
+            }
+            catch (Exception ex)
+            {
+                return new User();
+            }
         }
 
         public async Task<Producto> POSTProducto(Producto producto)

@@ -12,6 +12,8 @@ namespace APIProductos.Data
 
         public DbSet<Vendedor> Vendedor { get; set; }
 
+        public DbSet<User> User { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //Creando un producto
@@ -65,6 +67,13 @@ namespace APIProductos.Data
                    Apellidos = "Tapia Ortega",
                    CantidadVentas = 100,
                    EsActivo = "No"
+               }
+               );
+            modelBuilder.Entity<User>().HasData(
+               new User
+               {
+                   IdUsuario=0981316125,
+                   Clave="Ciscoudla.1"
                }
                );
         }

@@ -15,5 +15,6 @@ namespace CRUD_MVC.Services
         public Task<Vendedor> PUTSeller(int IdProducto, Vendedor vendedor);
         public Task<Vendedor> POSTSeller(Vendedor vendedor);
         public Task DeleteSeller(int Cedula);
+        public Task<User> GetUser(int IdUsuario, string Clave);
     }
 }
