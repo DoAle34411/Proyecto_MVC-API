@@ -20,13 +20,13 @@
         <input asp-for="CantidadVentas" class="form-control">
     </div>
     <div class="mb-3">
-        <label>Activo</label>
-        <input asp-for="EsActivo" class="form-control">
+        <label for="EsActivo">Vendedor Activo</label>
+        <select asp-for="EsActivo" class="form-control">
+            <option value="Si">Si</option>
+            <option value="No">No</option>
+        </select>
     </div>
-    <div class="mb-3">
-        <label>Cedula</label>
-        <input asp-for="Cedula" class="form-control">
-    </div>
+
     <div class="row col-6">
         <div class="col-6">
             <button type="submit" class="btn btn-success">Crear</button>

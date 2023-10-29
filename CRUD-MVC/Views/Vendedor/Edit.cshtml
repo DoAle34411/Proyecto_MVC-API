@@ -8,22 +8,28 @@
 
 <div class="mb-3">
     <label>Nombres</label>
-    <input asp-for="Nombres" class="form-control" readonly>
+    <input asp-for="Nombres" class="form-control">
 </div>
 <div class="mb-3">
     <label>Apellidos</label>
-    <input asp-for="Apellidos" class="form-control" readonly>
+    <input asp-for="Apellidos" class="form-control">
 </div>
 <div class="mb-3">
     <label>Cantidad Ventas</label>
-    <input asp-for="CantidadVentas" readonly class="form-control">
+    <input asp-for="CantidadVentas" class="form-control">
 </div>
 <div class="mb-3">
-    <label>Vendedor Activo</label>
-    <input asp-for="EsActivo" readonly class="form-control">
+    <label for="EsActivo">Vendedor Activo</label>
+    <select asp-for="EsActivo" class="form-control">
+        <option value="Si">Si</option>
+        <option value="No">No</option>
+    </select>
 </div>
 <div class="row col-6">
     <div class="col-6">
         <a asp-action="Indice" class="btn btn-success">Regresar</a>
+    </div>
+    <div class="col-6">
+        <button type="submit" asp-action="Edit" class="btn btn-success">Guardar</button>
     </div>
 </div>

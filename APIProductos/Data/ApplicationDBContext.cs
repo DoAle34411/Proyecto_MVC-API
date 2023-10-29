@@ -56,7 +56,7 @@ namespace APIProductos.Data
                    Nombres = "Silvia Rosa",
                    Apellidos = "Coronel Tapia",
                    CantidadVentas = 0,
-                   EsActivo = true
+                   EsActivo = "Si"
                },
                new Vendedor
                {
@@ -64,7 +64,7 @@ namespace APIProductos.Data
                    Nombres = "Alejandra Ivonne",
                    Apellidos = "Tapia Ortega",
                    CantidadVentas = 100,
-                   EsActivo = false
+                   EsActivo = "No"
                }
                );
         }

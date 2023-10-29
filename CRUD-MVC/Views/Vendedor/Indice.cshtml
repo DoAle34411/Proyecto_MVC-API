@@ -20,7 +20,7 @@
             <tr>
                 <th scope="col">Cedula</th>
                 <th scope="col">Nombres</th>
-                <th scope="col">Apellido</th>
+                <th scope="col">Apellidos</th>
                 <th scope="col">Cantidad Ventas</th>
                 <th scope="col">Acciones</th>
             </tr>
@@ -35,9 +35,9 @@
                     <td>@item.CantidadVentas</td>
                     <td class="centered-column" style="text-align: center">
                         <div class="btn-group" role="group" aria-label="Basic example">
-                            <a asp-action="Details" asp-route-IdProducto="@item.Cedula" class="btn custom-btn-color"><i class="fa fa-eye" aria-hidden="true"></i> </a>
-                            <a asp-action="Edit" asp-route-IdProducto="@item.Cedula" class="btn custom-btn-color-2"><i class="fa fa-pencil" aria-hidden="true"></i> </a>
-                            <a asp-action="Delete" asp-route-IdProducto="@item.Cedula" class="btn custom-btn-color-3"><i class="fa fa-times" aria-hidden="true"></i> </a>
+                            <a asp-action="Details" asp-route-Cedula="@item.Cedula" class="btn custom-btn-color"><i class="fa fa-eye" aria-hidden="true"></i> </a>
+                            <a asp-action="Edit" asp-route-Cedula="@item.Cedula" class="btn custom-btn-color-2"><i class="fa fa-pencil" aria-hidden="true"></i> </a>
+                            <a asp-action="Delete" asp-route-Cedula="@item.Cedula" class="btn custom-btn-color-3"><i class="fa fa-times" aria-hidden="true"></i> </a>
                         </div>
                     </td>
                 </tr>

@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace APIProductos.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20231025003634_VendedoresAgregados")]
-    partial class VendedoresAgregados
+    [Migration("20231029021338_NuevaBase")]
+    partial class NuevaBase
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -106,8 +106,9 @@ namespace APIProductos.Migrations
                     b.Property<int>("CantidadVentas")
                         .HasColumnType("int");
 
-                    b.Property<bool>("EsActivo")
-                        .HasColumnType("bit");
+                    b.Property<string>("EsActivo")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nombres")
                         .IsRequired()
@@ -123,7 +124,7 @@ namespace APIProductos.Migrations
                             Cedula = 1600014789,
                             Apellidos = "Coronel Tapia",
                             CantidadVentas = 0,
-                            EsActivo = true,
+                            EsActivo = "Si",
                             Nombres = "Silvia Rosa"
                         },
                         new
@@ -131,7 +132,7 @@ namespace APIProductos.Migrations
                             Cedula = 1726884552,
                             Apellidos = "Tapia Ortega",
                             CantidadVentas = 100,
-                            EsActivo = false,
+                            EsActivo = "No",
                             Nombres = "Alejandra Ivonne"
                         });
                 });

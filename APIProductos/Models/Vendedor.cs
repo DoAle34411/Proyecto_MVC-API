@@ -12,6 +12,6 @@ namespace APIProductos.Models
         [Required]
         public int CantidadVentas { get; set; }
         [Required]
-        public bool EsActivo { get; set; }
+        public string EsActivo { get; set; }
     }
 }

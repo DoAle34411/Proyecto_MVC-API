@@ -47,7 +47,7 @@ namespace CRUD_MVC.Util
                    Nombres="Silvia Rosa",
                    Apellidos="Coronel Tapia",
                    CantidadVentas=0,
-                   EsActivo=true
+                   EsActivo="Si"
                },
                new Vendedor
                {
@@ -55,7 +55,7 @@ namespace CRUD_MVC.Util
                    Nombres = "Alejandra Ivonne",
                    Apellidos = "Tapia Ortega",
                    CantidadVentas = 100,
-                   EsActivo = false
+                   EsActivo = "No"
                }
         };
     }

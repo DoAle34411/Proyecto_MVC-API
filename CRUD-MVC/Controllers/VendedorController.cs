@@ -41,7 +41,7 @@ namespace CRUD_MVC.Controllers
         }
 
         // GET: ProductoController/Create
-        public IActionResult Create()
+        public IActionResult CrearV()
         {
             return View();
         }
@@ -55,7 +55,7 @@ namespace CRUD_MVC.Controllers
             return RedirectToAction("Index");
         }*/
 
-        public async Task<IActionResult> Create(Vendedor vendedor)
+        public async Task<IActionResult> CrearV(Vendedor vendedor)
         {
             await _APIServices.POSTSeller(vendedor);
             return RedirectToAction("Indice");

@@ -17,6 +17,6 @@ namespace CRUD_MVC.Models
             set;
         }
         [Required]
-        public bool EsActivo { get; set; }
+        public string EsActivo { get; set; }
     }
 }
