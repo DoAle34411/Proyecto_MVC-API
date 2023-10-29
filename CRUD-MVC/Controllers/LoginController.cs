@@ -18,10 +18,10 @@ namespace CRUD_MVC.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Index(int IdUsuario, string Clave)
+        public async Task<IActionResult> Index(User usuarioP)
         {
             Console.WriteLine("EnvioDatos");
-            User usuario_encontrado = await _apiService.GetUser(IdUsuario, Clave);
+            User usuario_encontrado = await _apiService.GetUser(usuarioP.IdUsuario, usuarioP.Clave);
             if (usuario_encontrado == null)
             {
                 Console.WriteLine("UsuarioNoEncontradoMVC");
