@@ -80,9 +80,8 @@ namespace APIProductos.Controllers
             try
             {
                 Vendedor vendedor2 = await _db.Vendedor.FirstOrDefaultAsync(x => x.Cedula == Cedula);
-                if (vendedor != null && vendedor2 == null)
+                if (vendedor != null)
                 {
-                    vendedor2.Cedula = vendedor.Cedula != null ? vendedor.Cedula : vendedor2.Cedula;
                     vendedor2.Nombres = vendedor.Nombres != null ? vendedor.Nombres : vendedor2.Nombres;
                     vendedor2.Apellidos = vendedor.Apellidos != null ? vendedor.Apellidos : vendedor2.Apellidos;
                     vendedor2.CantidadVentas = vendedor.CantidadVentas != null ? vendedor.CantidadVentas : vendedor2.CantidadVentas;
